@@ -17,6 +17,7 @@
 #include "llvm/ADT/SmallPtrSet.h"
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/Analysis/AliasAnalysis.h"
+#include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/AssumptionCache.h"
 #include "llvm/Analysis/CFG.h"
 #include "llvm/Analysis/CaptureTracking.h"
@@ -161,7 +162,7 @@ static bool isObjectSize(const Value *V, uint64_t Size,
 // GetElementPtr Instruction Decomposition and Analysis
 //===----------------------------------------------------------------------===//
 
-namespace {
+namespace llvm {
   enum ExtensionKind {
     EK_NotExtended,
     EK_SignExt,
@@ -443,6 +444,7 @@ static bool notDifferentParent(const Value *O1, const Value *O2) {
 }
 #endif
 
+#if 0
 namespace {
   /// BasicAliasAnalysis - This is the primary alias analysis implementation.
   struct BasicAliasAnalysis : public ImmutablePass, public AliasAnalysis {
@@ -572,6 +574,7 @@ namespace {
                            AAMDNodes V2AATag);
   };
 }  // End of anonymous namespace
+#endif
 
 // Register this pass...
 char BasicAliasAnalysis::ID = 0;

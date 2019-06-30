@@ -22,7 +22,8 @@ namespace llvm {
   class Instruction;
 
   class AllocIdentify : public llvm::ModulePass {
-  protected:
+  //protected:
+  public:
     std::set<std::string> allocators;
     std::set<std::string> deallocators;
     bool flowsFrom(Value *Dest,Value *Src);

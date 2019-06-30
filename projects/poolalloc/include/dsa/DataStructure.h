@@ -267,9 +267,12 @@ private:
 
   void CloneAuxIntoGlobal(DSGraph* G);
 
-  void getAllCallees(const DSCallSite &CS, FuncSet &Callees);
+  //void getAllCallees(const DSCallSite &CS, FuncSet &Callees);
   void getAllAuxCallees (DSGraph* G, FuncSet &Callees);
   void applyCallsiteFilter(const DSCallSite &DCS, FuncSet &Callees);
+
+public:
+  void getAllCallees(const DSCallSite &CS, FuncSet &Callees);
 };
 
 /// CompleteBUDataStructures - This is the exact same as the bottom-up graphs,
