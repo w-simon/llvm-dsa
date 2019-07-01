@@ -435,7 +435,7 @@ static const Function *getParent(const Value *V) {
   return nullptr;
 }
 
-static bool notDifferentParent(const Value *O1, const Value *O2) {
+bool notDifferentParent(const Value *O1, const Value *O2) {
 
   const Function *F1 = getParent(O1);
   const Function *F2 = getParent(O2);

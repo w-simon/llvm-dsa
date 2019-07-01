@@ -27,6 +27,8 @@
 #include <algorithm>
 using namespace llvm;
 
+namespace llvm {
+
 struct VariableGEPIndex;
 
 //===----------------------------------------------------------------------===//
@@ -165,4 +167,7 @@ struct BasicAliasAnalysis : public ImmutablePass, public AliasAnalysis {
                            AAMDNodes V2AATag);
 
 };
+
+}
+
 #endif
